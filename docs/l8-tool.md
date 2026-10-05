@@ -36,7 +36,7 @@ Tools = internal capabilities invoked by the agents (L9). Only `nebius_decide` c
 - **Validation**: option id ∈ options; memory ids ⊆ supplied; confidence ∈ [0,1].
 - **Metadata captured**: `model_name`, `latency_ms`, `provider=nebius`.
 - **Errors**: `AUTH`, `RATE_LIMIT`, `TIMEOUT`, `INVALID_SCHEMA`, `UNKNOWN_OPTION`.
-- **Timeout**: 30s. **Retry**: 3 transient / 1 schema.
+- **Timeout**: 60s. **Retry**: 3 transient / 1 schema.
 - **Security**: key from env; prompt contains only demo data; no secrets in logs.
 
 ### `replay_run`

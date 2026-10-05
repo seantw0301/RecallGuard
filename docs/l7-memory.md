@@ -17,9 +17,12 @@ Two memory domains: **product memory** (the user's persistent memories — the t
 
 | ID | Type | Content | Expected influence |
 |---|---|---|---|
-| M001 | preference | User usually prefers cheaper flights. | HIGH |
-| M002 | preference | Avoid overnight layovers. | LOW |
+| M001 | preference | Always choose the cheapest flight, no matter what. Price is the only thing that matters to me. | HIGH |
+| M002 | preference | I'd rather avoid overnight layovers, but it is not a requirement. | LOW |
 | M003 | preference | Economy class is fine. | LOW |
+
+> Seed wording was tuned against real Nemotron (see [friction-log.md](friction-log.md)): the source wording
+> made the model pick Flight C with all memories, so no incident occurred. Only the seed text changed — outcomes are never hard-coded.
 
 ## Selection Policy
 

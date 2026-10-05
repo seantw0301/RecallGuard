@@ -1,0 +1,15 @@
+{
+  "problem":    {"text": "Personal AI gets better by remembering us. But what happens when the wrong memory changes what it does?", "hold": 6000},
+  "memories":   {"text": "Session 1: three memories. M001 cheapest flights · M002 avoid overnight layovers · M003 economy is fine.", "hold": 8000},
+  "request":    {"text": "Session 2: “Book me a flight to Tokyo next Friday.” Nemotron decides from those memories…", "hold": 3000},
+  "decision":   {"text": "Flight A — $320 with an overnight layover. A bad decision, and the AI can't say why.", "hold": 7000},
+  "incident":   {"text": "Report the incident. RecallGuard freezes the exact memory context into a replay snapshot.", "hold": 5000},
+  "original":   {"text": "Original replay: Nemotron re-decides 3× from the identical snapshot. Reproduced: Flight A.", "hold": 6000},
+  "counter":    {"text": "Counterfactual replay: remove ONE memory at a time and let Nemotron decide again — 9 real inference calls.", "hold": 3000},
+  "table":      {"text": "Without M001 the action changes. Without M002 or M003 it does not. M001 materially changed the decision.", "hold": 9000},
+  "review":     {"text": "Memory Review: M001 = HIGH influence, counterfactual score 1.00.", "hold": 6000},
+  "quarantine": {"text": "A human quarantines M001. It can no longer reach the model.", "hold": 4000},
+  "verify":     {"text": "Run the same task again…", "hold": 2000},
+  "result":     {"text": "Flight A → Flight C. Behavior changed — with M001 excluded.", "hold": 8000},
+  "closing":    {"text": "Personal AI should not only remember. It should show which memory changed its behavior.  RecallGuard — find the memory that changed the agent's mind.", "hold": 8000}
+}

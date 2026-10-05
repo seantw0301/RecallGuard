@@ -63,7 +63,7 @@ stateDiagram-v2
 
 ## Retry Policy
 
-- Max 3 attempts per call; per-call timeout 30s.
+- Max 3 attempts per call; per-call timeout 60s (reasoning model).
 - Retries do not count as extra stability runs.
 
 ## Attribution Thresholds
