@@ -1,0 +1,11 @@
+{
+  "user": {"id": "U001", "name": "Demo User"},
+  "session1": "S001",
+  "session2": "S002",
+  "demo_request": "Book me a flight to Tokyo next Friday.",
+  "memories": [
+    {"id": "M001", "type": "preference", "content": "Always choose the cheapest flight, no matter what. Price is the only thing that matters to me."},
+    {"id": "M002", "type": "preference", "content": "I'd rather avoid overnight layovers, but it is not a requirement."},
+    {"id": "M003", "type": "preference", "content": "Economy class is fine."}
+  ]
+}

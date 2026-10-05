@@ -1,0 +1,5 @@
+[
+  {"id": "FLIGHT_A", "label": "Flight A", "price_usd": 320, "stops": 2, "overnight_layover": true,  "description": "$320, 2 stops, overnight layover"},
+  {"id": "FLIGHT_B", "label": "Flight B", "price_usd": 390, "stops": 0, "overnight_layover": false, "description": "$390, direct, daytime"},
+  {"id": "FLIGHT_C", "label": "Flight C", "price_usd": 355, "stops": 1, "overnight_layover": false, "description": "$355, 1 stop, no overnight layover"}
+]
