@@ -89,8 +89,8 @@ test("RecallGuard 3-minute demo", async ({ browser }) => {
   const seconds = (Date.now() - started) / 1000;
   const video = page.video()!;
   await ctx.close();
-  await video.saveAs(path.join(OUT, "recallguard-demo.webm"));
-  if (Object.keys(durations).length) fs.writeFileSync(path.join(AUDIO, "timeline.json"), JSON.stringify(timeline, null, 1));
+  await video.saveAs(path.join(OUT, process.env.BASE_URL ? "recallguard-demo-prod.webm" : "recallguard-demo.webm"));
+  if (Object.keys(durations).length) if (!process.env.BASE_URL) fs.writeFileSync(path.join(AUDIO, "timeline.json"), JSON.stringify(timeline, null, 1));
   console.log(`demo length ≈ ${seconds.toFixed(0)}s`);
   expect(seconds).toBeLessThan(180);
 });

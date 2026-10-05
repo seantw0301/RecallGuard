@@ -7,5 +7,5 @@ export default defineConfig({
   workers: 1,
   reporter: "list",
   outputDir: "../artifacts/pw",
-  use: { baseURL: "http://localhost:3000" },
+  use: { baseURL: process.env.BASE_URL ?? "http://localhost:3000" },
 });
