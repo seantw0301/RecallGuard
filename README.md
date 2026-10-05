@@ -69,7 +69,7 @@ RUN_LIVE=1 scripts/test.sh      # + full loop against real Nemotron (gates 1–3
 Playwright demo (`demo/`) doubles as the e2e test against live Nemotron.
 
 ## Demo Recording
-`scripts/record-demo.sh` → `artifacts/recallguard-demo.webm` (git-ignored).
+`scripts/record-demo.sh` → `artifacts/recallguard-demo-audio.mp4` (narrated, macOS `say`) and silent `recallguard-demo.webm` (git-ignored).
 
 ## Product Feedback
 [docs/product-feedback.md](docs/product-feedback.md)

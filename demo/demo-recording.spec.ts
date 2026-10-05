@@ -6,9 +6,18 @@ const narration: Record<string, { text: string; hold: number }> = JSON.parse(
   fs.readFileSync(path.join(__dirname, "narration.json"), "utf8"),
 );
 const OUT = path.join(__dirname, "..", "artifacts");
+const AUDIO = path.join(OUT, "audio");
+const durations: Record<string, number> = fs.existsSync(path.join(AUDIO, "durations.json"))
+  ? JSON.parse(fs.readFileSync(path.join(AUDIO, "durations.json"), "utf8"))
+  : {};
+const timeline: { key: string; t: number }[] = [];
+let t0 = Date.now();
 
 async function say(page: Page, key: string) {
-  const { text, hold } = narration[key];
+  const { text } = narration[key];
+  // hold at least as long as the spoken line (+0.6 s) so audio never overlaps the next beat
+  const hold = Math.max(narration[key].hold, Math.round((durations[key] ?? 0) * 1000) + 600);
+  timeline.push({ key, t: (Date.now() - t0) / 1000 });
   await page.evaluate((t) => {
     let el = document.getElementById("rg-caption");
     if (!el) {
@@ -31,6 +40,7 @@ test("RecallGuard 3-minute demo", async ({ browser }) => {
   });
   const page = await ctx.newPage();
   const started = Date.now();
+  t0 = started;
 
   await page.goto("/");
   await page.getByTestId("reset").click();
@@ -80,6 +90,7 @@ test("RecallGuard 3-minute demo", async ({ browser }) => {
   const video = page.video()!;
   await ctx.close();
   await video.saveAs(path.join(OUT, "recallguard-demo.webm"));
+  if (Object.keys(durations).length) fs.writeFileSync(path.join(AUDIO, "timeline.json"), JSON.stringify(timeline, null, 1));
   console.log(`demo length ≈ ${seconds.toFixed(0)}s`);
   expect(seconds).toBeLessThan(180);
 });
