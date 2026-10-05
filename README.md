@@ -91,6 +91,9 @@ Everything in this repo, created for the hackathon; plan in [docs/source-plan.md
 ## Future Work
 MODIFY_MEMORY runs, pairwise removal, factor-level MEDIUM influence, more scenarios, PostgreSQL, SSE progress.
 
+## Live
+https://recallguard.jxdtw.com — deployment: [docs/deploy.md](docs/deploy.md)
+
 ## Docs
 [Overview](docs/00-overview.md) · L1 [Business](docs/l1-business.md) · L2 [Product](docs/l2-product.md) · L3 [AI](docs/l3-ai-strategy.md) · L4 [Workflow](docs/l4-workflow.md) · L5 [Data](docs/l5-data-flow.md) · L6 [State](docs/l6-state-flow.md) · L7 [Memory](docs/l7-memory.md) · L8 [Tool](docs/l8-tool.md) · L9 [Agent](docs/l9-agent.md) · L10 [Service](docs/l10-service.md) · L11 [Event](docs/l11-event.md) · L12 [Infra](docs/l12-infrastructure.md) · [Devpost](docs/devpost.md)
 
