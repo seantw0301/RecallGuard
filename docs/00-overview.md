@@ -40,7 +40,7 @@ Target: Nebius × NVIDIA Global AI Hackathon — Personal AI track.
 | A4 | `memory_ids_used` is self-reported by model. | Over-claiming | Show as "model-reported"; attribution relies on counterfactual change only. |
 | A5 | Single-removal misses joint effects (M001+M003). | Under-attribution | Declared limitation; pairwise removal = future work. |
 | A6 | LLM nondeterminism. | Flaky attribution | temperature=0, fixed seed if supported, 3 runs/condition, UNSTABLE flag, Gate 1. |
-| A7 | Source stack (Python/Next.js/SQLite) differs from user default (PHP/Flutter/MySQL). | Rule conflict | Source plan is explicit user spec → follow it (see L12). |
+| A7 | Source stack (Python/Next.js/SQLite) differs from global default. | Rule conflict | User confirmed Python, FastAPI, Next.js, SQLite (see L12). |
 | A8 | Source repo name `recallguard`; user requested `RecallGuard`. | Naming | GitHub repo = `RecallGuard`; Python pkg stays lowercase. |
 | A9 | Nebius model ID / base URL unknown. | Gate 0 blocker | Env vars; smoke test first (Phase 0). |
 

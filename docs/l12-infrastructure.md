@@ -12,11 +12,10 @@
 | Demo video | Playwright recording + FFmpeg | |
 | License | MIT | Open-source requirement |
 
-### Rule exception (explicit)
+### Stack decision (user-confirmed)
 
-- Global default stack = PHP / Flutter / MySQL.
-- This project follows the **source plan's explicit stack** (user-provided spec) because Nebius/Nemotron hackathon tooling is Python/TS-oriented.
-- Override rule: explicit user tech > default.
+- User explicitly chose Python, FastAPI, Next.js, SQLite.
+- Overrides global default (PHP / Flutter / MySQL).
 
 ## Infrastructure Diagram
 
