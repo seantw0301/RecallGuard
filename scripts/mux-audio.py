@@ -9,7 +9,7 @@ cmd = ["ffmpeg", "-loglevel", "error", "-y", "-i", str(A / "recallguard-demo.web
 for e in tl:
     cmd += ["-i", str(A / "audio" / f"{e['key']}.wav")]
 parts = [f"[{i + 1}:a]adelay={int(e['t'] * 1000)}:all=1[a{i}]" for i, e in enumerate(tl)]
-mix = "".join(f"[a{i}]" for i in range(len(tl))) + f"amix=inputs={len(tl)}:normalize=0[aout]"
+mix = "".join(f"[a{i}]" for i in range(len(tl))) + f"amix=inputs={len(tl)}:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11[aout]"
 cmd += ["-filter_complex", ";".join(parts + [mix]), "-map", "0:v", "-map", "[aout]",
         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-shortest",
         str(A / "recallguard-demo-audio.mp4")]

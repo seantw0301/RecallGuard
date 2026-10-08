@@ -28,6 +28,7 @@ async function say(page: Page, key: string) {
       document.body.appendChild(el);
     }
     el.textContent = t;
+    document.body.style.paddingBottom = "150px"; // keep content clear of the caption bar
   }, text);
   await page.waitForTimeout(hold);
 }
@@ -45,7 +46,6 @@ test("RecallGuard 3-minute demo", async ({ browser }) => {
   await page.goto("/");
   await page.getByTestId("reset").click();
   await expect(page.getByTestId("memory-M001")).toBeVisible();
-  await say(page, "problem");
   await say(page, "memories");
 
   await say(page, "request");
@@ -83,6 +83,8 @@ test("RecallGuard 3-minute demo", async ({ browser }) => {
   await page.getByTestId("verify").click();
   await expect(page.getByTestId("verify-result")).toBeVisible({ timeout: 60_000 });
   await expect(page.getByTestId("verify-result")).toContainText("behavior changed");
+  await page.evaluate(() => { document.body.style.paddingBottom = "400px"; document.querySelector('[data-testid="verify-result"]')!.scrollIntoView({ block: "center", behavior: "smooth" }); });
+  await page.waitForTimeout(800);
   await say(page, "result");
   await say(page, "closing");
 

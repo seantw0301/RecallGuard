@@ -1,0 +1,10 @@
+{
+  "comment": "Cue sheet for the 30-second opening: start second + spoken text (speakable spelling). Voice/speed are applied by scripts/revoice.py, so the picture never needs re-recording.",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "cues": [
+    { "at": 0.4,  "text": "Your AI remembers everything, and still books the wrong flight. You asked for Tokyo. It chose the overnight layover. Which memory did that?" },
+    { "at": 10.4, "text": "Let AI remember. Keep every memory accountable. Nemotron replays the trip without each memory. Without memory one, Flight A disappears." },
+    { "at": 20.5, "text": "Remove one memory. Replay. See what changes. RecallGuard freezes the decision. Nemotron on Nebius replays it. You quarantine the culprit." }
+  ]
+}
